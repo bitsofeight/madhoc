@@ -1,0 +1,33 @@
+Aodv daemon v1.0 (Mad-hoc)
+By 
+Fredrik Lilieblad
+Oskar Mattsson
+Petra Nylund
+Dan Ouchterlony
+Anders Roxenhag
+
+Mail : mad-hoc@flyinglinux.net
+WWW  : mad-hoc.flyinglinix.net
+
+Some short notes.
+
+
+The kernel must support IP forwarding in the kernel to run.
+This can be turned on in the file /etc/sysconfig/network under redhat, change or add the line
+FORWARD_IPV4 to FORWARD_IPV4=true or type 'echo 1 > /proc/sys/net/ipv4/ip_forward'.
+
+You also need to install libpcap-0.4.
+
+Running:
+
+Put the card in ad hoc mode with a good address, and add the net for the address.
+Add the broadcast address to the interface 'route add 255.255.255.255 dev your_interface'.
+Run the file with 'aodv_daemon your_interface'.
+
+The log file is in ./logmsg.txt.
+You can get some commands in the program by hitting enter.
+
+
+
+
+

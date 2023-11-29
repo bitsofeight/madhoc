@@ -1,0 +1,44 @@
+.Dd June 29, 2000
+.Dt aodv_daemon 8 
+.Os Linux 2.2
+.Sh NAME
+aodv_daemon \- Ad-hoc On\-demand Distance Vector routing protocol daemon
+.Sh SYNOPSIS
+.Nm aodv_daemon 
+.Ar interface
+.Sh DESCRIPTION
+.B aodv_daemon
+is the daemon for the Ad-hoc On\-demand Distance Vector routing protocol. It 
+is a userspace routing daemon updating the kernel routing table with
+information exchanged trough the AODV protocol. This daemon has to be
+run as root. You also have to have ip_forwarding turned on in the kernel.
+If the aodv_daemon has been compiled with the flag 
+.Em MSGLOG 
+there will be a log file called msglog.txt in the daemons working directory. 
+The daemon also keeps track of crashes with two files in /var/lock.
+.Sh OPTIONS
+.Ar interface
+This is the interface you want to run the AODV protocol on.
+.Sh FILES
+.Pa ./msglog.txt
+.br
+.Pa /var/lock/aodv_time
+.br
+.Pa /var/lock/aodv_lock
+.Sh STANDARDS
+Based on the IETF manet working group draft-ietf-manet-aodv-05.txt 
+<http://www.ietf.org/internet-drafts/draft-ietf-manet-aodv-05.txt>.
+.Sh AUTHORS
+.An Fredrik Lilieblad
+.An Oskar Mattsson
+.An Petra Nylund
+.An Dan Ouchterlony
+.An Anders Roxenhag
+.Pp
+All from the Royal Institute of Technogy (KTH) Sweden.
+.Pp
+Authors can be contacted at <mad-hoc@flyinglinux.net>
+.Pp
+Updates can be downloaded from http://mad-hoc.flyinglinux.net
+.Sh BUGS
+Probably lots of them, but none known at the time.
